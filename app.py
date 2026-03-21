@@ -146,7 +146,6 @@ npv = tn/(tn+fn+eps)
 lrp = sens/(1-spec+eps)
 lrn = (1-sens+eps)/spec
 dor = lrp / lrn
-prevalence = (tp + fn) / (tp + fp + fn + tn + 1e-10)
 
 lorp = np.log(lrp+eps)
 lorn = np.log(lrn+eps)
