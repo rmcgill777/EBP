@@ -46,6 +46,31 @@ h1, h2, h3, h4, h5, h6, p, div, span, label {
 
 </style>
 """, unsafe_allow_html=True)
+
+# -------------------------
+# SAFE EXPANDER STYLING
+# -------------------------
+st.markdown("""
+<style>
+
+/* Only style the expander label text (safe) */
+details summary {
+    background-color: #d4af37;
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+details summary:hover {
+    background-color: #b8962e;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
