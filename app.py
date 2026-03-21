@@ -3,74 +3,49 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 
-st.markdown("""
-<style>
-h2, h3 {
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 4px;
-}
-</style>
-""", unsafe_allow_html=True)
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+import io
 
+# ✅ ALL STYLING GOES HERE (TOGETHER)
 st.markdown("""
 <style>
 
-/* Target download button specifically */
-.stDownloadButton button {
-    background-color: #d4af37 !important;  /* W&M gold */
-    color: black !important;
-    font-weight: bold;
-    border-radius: 8px;
-    border: none;
-    padding: 0.5em 1em;
-}
-
-/* Hover effect */
-.stDownloadButton button:hover {
-    background-color: #b8962e !important;
-    color: black !important;
-}
-
-/* Make it pop slightly */
-.stDownloadButton {
-    margin-top: 10px;
-}
-
-</style>
-""", unsafe_allow_html=True)
-st.markdown("""
-<style>
-/* Main app background */
+/* Background (if you have it) */
 .stApp {
     background-color: #115740;
 }
 
-/* Main content container (keeps readability) */
-[data-testid="stAppViewContainer"] {
-    background: linear-gradient(135deg, #115740 0%, #0C3B2E 100%);
+/* Download + button styling */
+.stButton button, .stDownloadButton button {
+    background-color: #d4af37 !important;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
-/* Sidebar (optional match) */
-[data-testid="stSidebar"] {
-    background-color: #0C3B2E;
+/* ✅ ADD THIS PART (Expander styling) */
+[data-testid="stExpander"] > div:first-child {
+    background-color: #d4af37 !important;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
-/* Make text readable */
-h1, h2, h3, h4, h5, h6, p, div, span, label {
-    color: #F4F4F4 !important;
+[data-testid="stExpander"] summary {
+    color: black !important;
 }
+
+[data-testid="stExpander"] > div:first-child:hover {
+    background-color: #b8962e !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-[data-testid="stVerticalBlock"] > div {
-    background-color: rgba(255,255,255,0.03);
-    padding: 10px;
-    border-radius: 10px;
-}
-</style>
-""", unsafe_allow_html=True)
+# 👇 THEN your app starts
+st.title("EBA Diagnostic Nomogram")
 
 
 # 👇 THEN YOUR APP
