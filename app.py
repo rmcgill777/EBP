@@ -30,7 +30,6 @@ lrn = (1-sens+eps)/spec
 
 lorp = np.log(lrp+eps)
 lorn = np.log(lrn+eps)
-dor = lr_pos / lr_neg
 
 auc = (sens + spec)/2
 prev = (tp+fn)/(tp+fp+fn+tn+eps)
@@ -49,7 +48,6 @@ st.write(f"LR+: {lrp:.3f}")
 st.write(f"LR-: {lrn:.3f}")
 st.write(f"log(LR+): {lorp:.3f}")
 st.write(f"log(LR-): {lorn:.3f}")
-st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
