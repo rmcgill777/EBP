@@ -52,6 +52,38 @@ st.write(f"log(LR-): {lorn:.3f}")
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
 
+st.subheader("ROC Curve (Multiple Thresholds)")
+
+n_points = st.number_input(
+    "Number of thresholds",
+    min_value=2,
+    max_value=10,
+    value=3
+)
+
+roc_data = []
+
+for i in range(n_points):
+    st.markdown(f"**Threshold {i+1}**")
+    col1, col2, col3, col4 = st.columns(4)
+
+    with col1:
+        tp_i = st.number_input(f"TP {i+1}", min_value=0, value=50, key=f"tp{i}")
+    with col2:
+        fp_i = st.number_input(f"FP {i+1}", min_value=0, value=10, key=f"fp{i}")
+    with col3:
+        fn_i = st.number_input(f"FN {i+1}", min_value=0, value=5, key=f"fn{i}")
+    with col4:
+        tn_i = st.number_input(f"TN {i+1}", min_value=0, value=100, key=f"tn{i}")
+
+    sens_i = tp_i / (tp_i + fn_i + 1e-10)
+    spec_i = tn_i / (tn_i + fp_i + 1e-10)
+
+    fpr_i = 1 - spec_i
+    tpr_i = sens_i
+
+    roc_data.append((fpr_i, tpr_i))
+
 # -------------------------
 # FAGAN NOMOGRAM
 # -------------------------
