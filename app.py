@@ -169,55 +169,33 @@ st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
 
-st.subheader("Interpretation")
+/* -------------------------
+   INTERPRETATION COLORS (POP)
+------------------------- */
 
-# -------------------------
-# LR+ (Rule-in)
-# -------------------------
-if lrp > 10:
-    st.success("LR+: Strong evidence to rule IN the condition.")
-elif lrp > 5:
-    st.info("LR+: Moderate evidence to rule IN the condition.")
-elif lrp > 2:
-    st.warning("LR+: Weak evidence to rule IN the condition.")
-else:
-    st.error("LR+: Minimal evidence to rule IN the condition.")
+/* SUCCESS (strong positive) */
+[data-testid="stAlert"][data-baseweb="notification"][kind="success"] {
+    background-color: #1f4e79 !important;  /* deep blue */
+    color: white !important;
+}
 
-# -------------------------
-# LR- (Rule-out)
-# -------------------------
-if lrn < 0.1:
-    st.success("LR-: Strong evidence to rule OUT the condition.")
-elif lrn < 0.2:
-    st.info("LR-: Moderate evidence to rule OUT the condition.")
-elif lrn < 0.5:
-    st.warning("LR-: Weak evidence to rule OUT the condition.")
-else:
-    st.error("LR-: Minimal evidence to rule OUT the condition.")
+/* INFO (moderate positive) */
+[data-testid="stAlert"][data-baseweb="notification"][kind="info"] {
+    background-color: #2e75b6 !important;  /* brighter blue */
+    color: white !important;
+}
 
-# -------------------------
-# DOR (Overall test performance)
-# -------------------------
-if dor > 100:
-    st.success("DOR: Very strong overall test performance.")
-elif dor > 20:
-    st.info("DOR: Good overall test performance.")
-elif dor > 5:
-    st.warning("DOR: Moderate test performance.")
-else:
-    st.error("DOR: Limited discriminative value.")
+/* WARNING (moderate concern) */
+[data-testid="stAlert"][data-baseweb="notification"][kind="warning"] {
+    background-color: #e69138 !important;  /* orange */
+    color: black !important;
+}
 
-# -------------------------
-# AUC (Discrimination)
-# -------------------------
-if auc > 0.9:
-    st.success("AUC: Excellent discrimination.")
-elif auc > 0.8:
-    st.info("AUC: Good discrimination.")
-elif auc > 0.7:
-    st.warning("AUC: Acceptable discrimination.")
-else:
-    st.error("AUC: Poor discrimination.")
+/* ERROR (poor / minimal evidence) */
+[data-testid="stAlert"][data-baseweb="notification"][kind="error"] {
+    background-color: #cc4125 !important;  /* warm red */
+    color: white !important;
+}
 
 # -------------------------
 # FAGAN NOMOGRAM
