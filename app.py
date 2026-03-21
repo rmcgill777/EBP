@@ -48,24 +48,23 @@ h1, h2, h3, h4, h5, h6, p, div, span, label {
 """, unsafe_allow_html=True)
 
 # -------------------------
-# SAFE EXPANDER STYLING
+# SAFE EXPANDER STYLING (WORKING)
 # -------------------------
 st.markdown("""
 <style>
 
-/* Only style the expander label text (safe) */
-details summary {
-    background-color: #d4af37;
-    color: black;
+/* Target expander header correctly */
+[data-testid="stExpander"] summary {
+    background-color: #d4af37 !important;
+    color: black !important;
     font-weight: bold;
     padding: 6px 10px;
     border-radius: 6px;
-    cursor: pointer;
 }
 
-/* Hover effect */
-details summary:hover {
-    background-color: #b8962e;
+/* Hover */
+[data-testid="stExpander"] summary:hover {
+    background-color: #b8962e !important;
 }
 
 </style>
