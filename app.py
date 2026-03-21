@@ -8,46 +8,44 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 
-# ✅ ALL STYLING GOES HERE (TOGETHER)
+# -------------------------
+# STYLING (SAFE & CLEAN)
+# -------------------------
 st.markdown("""
 <style>
 
-/* Background (if you have it) */
+/* App background (William & Mary green) */
 .stApp {
     background-color: #115740;
 }
 
-/* Download + button styling */
+/* Keep text readable */
+h1, h2, h3, h4, h5, h6, p, div, span, label {
+    color: #F4F4F4;
+}
+
+/* Buttons (Download + Info) */
 .stButton button, .stDownloadButton button {
-    background-color: #d4af37 !important;
-    color: black !important;
+    background-color: #d4af37;
+    color: black;
     font-weight: bold;
     border-radius: 8px;
+    border: none;
+    padding: 0.4em 1em;
 }
 
-/* ✅ ADD THIS PART (Expander styling) */
-[data-testid="stExpander"] > div:first-child {
-    background-color: #d4af37 !important;
-    color: black !important;
-    font-weight: bold;
-    border-radius: 8px;
+/* Hover effect */
+.stButton button:hover, .stDownloadButton button:hover {
+    background-color: #b8962e;
 }
 
-[data-testid="stExpander"] summary {
-    color: black !important;
-}
-
-[data-testid="stExpander"] > div:first-child:hover {
-    background-color: #b8962e !important;
+/* Subtle section spacing */
+.block-container {
+    padding-top: 2rem;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
-# 👇 THEN your app starts
-st.title("EBA Diagnostic Nomogram")
-
-
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
