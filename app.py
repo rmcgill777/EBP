@@ -3,44 +3,30 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 
-# 👇 DEFINE FIRST
-def add_pollock_background():
- def add_pollock_background():
-    st.markdown(
-        """
-        <style>
-        /* Main background */
-        .stApp {
-            background: linear-gradient(135deg, #0f1a17, #1f3d36) !important;
-        }
+st.markdown("""
+<style>
+.result-box {
+    background: linear-gradient(135deg, #115740, #0C3B2E);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #0a2e24;
+    border-top: 4px solid #d4af37;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
 
-        /* Subtle overlay (behind content) */
-        .stApp::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 20% 30%, rgba(120,200,160,0.08) 2px, transparent 2px),
-                radial-gradient(circle at 70% 60%, rgba(200,200,200,0.06) 2px, transparent 2px),
-                radial-gradient(circle at 40% 80%, rgba(120,200,160,0.05) 3px, transparent 3px);
-            pointer-events: none;
-            z-index: -1;   /* 👈 THIS IS THE KEY FIX */
-        }
-
-        /* Ensure text is readable */
-        .stApp, .stApp p, .stApp div, .stApp span, .stApp label {
-            color: #e8f5f0 !important;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# 👇 THEN CALL
-add_pollock_background()
+/* ensure all text inside is readable */
+.result-box h1, 
+.result-box h2, 
+.result-box h3, 
+.result-box p, 
+.result-box div,
+.result-box span {
+    color: #f4f4f4 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
