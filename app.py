@@ -5,6 +5,15 @@ import io
 
 st.markdown("""
 <style>
+h2, h3 {
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 4px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
 
 /* Target download button specifically */
 .stDownloadButton button {
