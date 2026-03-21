@@ -223,33 +223,102 @@ else:
     st.error("AUC: Poor discrimination.")
 
 # -------------------------
-# FAGAN NOMOGRAM
+# FAGAN NOMOGRAM (POLISHED)
 # -------------------------
-def prob_to_odds(p): return p/(1-p)
-def odds_to_prob(o): return o/(1+o)
+st.subheader("Fagan Nomogram")
 
-pre = st.slider("Pre-test probability", 0.01, 0.99, float(prev))
-pre_odds = prob_to_odds(pre)
+def prob_to_odds(p):
+    return p / (1 - p)
 
-post_pos = odds_to_prob(pre_odds * lrp)
-post_neg = odds_to_prob(pre_odds * lrn)
+def odds_to_prob(o):
+    return o / (1 + o)
 
-fig, ax = plt.subplots()
-ax.plot([0,1],[pre,post_pos])
-ax.plot([0,1],[pre,post_neg], linestyle="dashed")
-ax.set_title("Fagan Nomogram (simplified)")
-st.pyplot(fig)
+def prob_to_logodds(p):
+    return np.log10(prob_to_odds(p))
 
-st.write(f"Post+ : {post_pos:.3f}")
-st.write(f"Post- : {post_neg:.3f}")
+def logodds_to_prob(lo):
+    return odds_to_prob(10 ** lo)
 
-buf = io.BytesIO()
-fig.savefig(buf, format="png")
-st.download_button(
-    "Download Nomogram",
-    buf.getvalue(),
-    file_name="nomogram.png",
-    mime="image/png"
+# Pre-test probability slider
+pre_prob = st.slider("Pre-test probability", 0.01, 0.99, float(prevalence))
+
+# Convert to log-odds
+pre_lo = prob_to_logodds(pre_prob)
+lr_pos_log = np.log10(lr_pos)
+lr_neg_log = np.log10(lr_neg)
+
+post_lo_pos = pre_lo + lr_pos_log
+post_lo_neg = pre_lo + lr_neg_log
+
+post_prob_pos = logodds_to_prob(post_lo_pos)
+post_prob_neg = logodds_to_prob(post_lo_neg)
+
+# Create plot
+fig2, ax2 = plt.subplots(figsize=(10, 6))
+
+x_pre, x_lr, x_post = 0, 1, 2
+
+# Probability ticks
+prob_ticks = np.array([0.01, 0.05, 0.1, 0.2, 0.5, 0.8, 0.9, 0.95, 0.99])
+log_ticks = prob_to_logodds(prob_ticks)
+
+# Draw vertical axes
+for x in [x_pre, x_lr, x_post]:
+    ax2.plot([x, x], [log_ticks.min(), log_ticks.max()])
+
+# Label probability axes
+for p, lo in zip(prob_ticks, log_ticks):
+    ax2.text(x_pre - 0.05, lo, f"{p:.2f}", ha="right", va="center")
+    ax2.text(x_post + 0.05, lo, f"{p:.2f}", ha="left", va="center")
+
+# LR axis ticks
+lr_ticks = np.array([0.1, 0.2, 0.5, 1, 2, 5, 10])
+lr_log_ticks = np.log10(lr_ticks)
+
+for lr_val, lo in zip(lr_ticks, lr_log_ticks):
+    ax2.text(x_lr, lo, f"{lr_val}", ha="center", va="center")
+
+# -------------------------
+# LINES (POLISHED COLORS)
+# -------------------------
+
+# Positive test (gold)
+ax2.plot(
+    [x_pre, x_lr, x_post],
+    [pre_lo, lr_pos_log, post_lo_pos],
+    linewidth=3,
+    color="#d4af37",
+    label="Positive Result"
 )
+
+# Negative test (gray dashed)
+ax2.plot(
+    [x_pre, x_lr, x_post],
+    [pre_lo, lr_neg_log, post_lo_neg],
+    linestyle="dashed",
+    linewidth=2,
+    color="gray",
+    label="Negative Result"
+)
+
+# Highlight endpoints
+ax2.scatter(x_post, post_lo_pos, color="#d4af37", s=60)
+ax2.scatter(x_post, post_lo_neg, color="gray", s=50)
+
+# Labels and formatting
+ax2.set_xticks([x_pre, x_lr, x_post])
+ax2.set_xticklabels(["Pre-test", "LR", "Post-test"])
+ax2.set_ylabel("Log Odds")
+ax2.set_title("Fagan Nomogram")
+
+ax2.legend()
+
+st.pyplot(fig2)
+
+# -------------------------
+# POST-TEST OUTPUTS
+# -------------------------
+st.write(f"Post-test probability (positive): {post_prob_pos:.3f}")
+st.write(f"Post-test probability (negative): {post_prob_neg:.3f}")
 
 
