@@ -2,6 +2,30 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import io
+st.markdown("""
+<style>
+/* Main app background */
+.stApp {
+    background-color: #115740;
+}
+
+/* Main content container (keeps readability) */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #115740 0%, #0C3B2E 100%);
+}
+
+/* Sidebar (optional match) */
+[data-testid="stSidebar"] {
+    background-color: #0C3B2E;
+}
+
+/* Make text readable */
+h1, h2, h3, h4, h5, h6, p, div, span, label {
+    color: #F4F4F4 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
