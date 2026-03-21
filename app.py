@@ -23,6 +23,24 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown('<div class="green-results">', unsafe_allow_html=True)
+
+st.subheader("Diagnostic Efficiency")
+st.write(f"Sensitivity: {sensitivity:.3f}")
+st.write(f"Specificity: {specificity:.3f}")
+st.write(f"PPV: {ppv:.3f}")
+st.write(f"NPV: {npv:.3f}")
+
+st.subheader("Likelihood Ratios")
+st.write(f"LR+: {lr_pos:.3f}")
+st.write(f"LR-: {lr_neg:.3f}")
+
+st.subheader("Discrimination")
+st.write(f"AUC (derived): {auc:.3f}")
+
+st.markdown('</div>', unsafe_allow_html=True)
+
+
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
