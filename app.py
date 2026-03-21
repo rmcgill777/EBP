@@ -222,6 +222,8 @@ elif auc > 0.7:
 else:
     st.error("AUC: Poor discrimination.")
 
+prevalence = (tp + fn) / (tp + fp + fn + tn + 1e-10)
+
 # -------------------------
 # FAGAN NOMOGRAM (POLISHED)
 # -------------------------
