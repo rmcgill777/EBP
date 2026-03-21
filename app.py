@@ -26,6 +26,16 @@ h1, h2, h3, h4, h5, h6, p, div, span, label {
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+[data-testid="stVerticalBlock"] > div {
+    background-color: rgba(255,255,255,0.03);
+    padding: 10px;
+    border-radius: 10px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
