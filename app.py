@@ -1,7 +1,9 @@
-import io
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+import io
+
+add_pollock_background()   # 👈 MUST be here
 
 st.set_page_config(layout="wide")
 
