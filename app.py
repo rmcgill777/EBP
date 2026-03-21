@@ -27,6 +27,7 @@ npv = tn/(tn+fn+eps)
 
 lrp = sens/(1-spec+eps)
 lrn = (1-sens+eps)/spec
+dor = lr_pos / lr_neg
 
 lorp = np.log(lrp+eps)
 lorn = np.log(lrn+eps)
@@ -43,11 +44,12 @@ st.write(f"Specificity: {spec:.3f}")
 st.write(f"PPV: {ppv:.3f}")
 st.write(f"NPV: {npv:.3f}")
 
-st.write("### Likelihood Ratios")
-st.write(f"LR+: {lrp:.3f}")
-st.write(f"LR-: {lrn:.3f}")
-st.write(f"log(LR+): {lorp:.3f}")
-st.write(f"log(LR-): {lorn:.3f}")
+st.subheader("Likelihood Ratios")
+st.write(f"LR+: {lr_pos:.3f}")
+st.write(f"LR-: {lr_neg:.3f}")
+st.write(f"log(LR+): {lor_pos:.3f}")
+st.write(f"log(LR-): {lor_neg:.3f}")
+st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
