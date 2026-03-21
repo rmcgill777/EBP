@@ -5,26 +5,21 @@ import io
 
 st.markdown("""
 <style>
-.result-box {
+
+/* MAIN content blocks */
+[data-testid="stVerticalBlock"] > div:has(.green-results) {
     background: linear-gradient(135deg, #115740, #0C3B2E);
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #0a2e24;
     border-top: 4px solid #d4af37;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #f4f4f4;
 }
 
-/* ensure all text inside is readable */
-.result-box h1, 
-.result-box h2, 
-.result-box h3, 
-.result-box p, 
-.result-box div,
-.result-box span {
+/* Make text readable inside */
+.green-results, 
+.green-results * {
     color: #f4f4f4 !important;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
