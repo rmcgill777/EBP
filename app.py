@@ -59,11 +59,11 @@ st.subheader("Interpretation")
 # -------------------------
 # LR+ (Rule-in)
 # -------------------------
-if lr_pos > 10:
+if lrp > 10:
     st.success("LR+: Strong evidence to rule IN the condition.")
-elif lr_pos > 5:
+elif lrp > 5:
     st.info("LR+: Moderate evidence to rule IN the condition.")
-elif lr_pos > 2:
+elif lrp > 2:
     st.warning("LR+: Weak evidence to rule IN the condition.")
 else:
     st.error("LR+: Minimal evidence to rule IN the condition.")
@@ -71,11 +71,11 @@ else:
 # -------------------------
 # LR- (Rule-out)
 # -------------------------
-if lr_neg < 0.1:
+if lrn < 0.1:
     st.success("LR-: Strong evidence to rule OUT the condition.")
-elif lr_neg < 0.2:
+elif lrn < 0.2:
     st.info("LR-: Moderate evidence to rule OUT the condition.")
-elif lr_neg < 0.5:
+elif lrn < 0.5:
     st.warning("LR-: Weak evidence to rule OUT the condition.")
 else:
     st.error("LR-: Minimal evidence to rule OUT the condition.")
