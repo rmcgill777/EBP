@@ -3,11 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 
-st.set_page_config(layout="wide")
-
-# -------------------------
-# STYLE (Pollock-inspired)
-# -------------------------
+# 👇 DEFINE FIRST
 def add_pollock_background():
     st.markdown(
         """
@@ -15,31 +11,15 @@ def add_pollock_background():
         .stApp {
             background: linear-gradient(135deg, #0f1a17, #1f3d36) !important;
         }
-
-        .stApp::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 20% 30%, rgba(120,200,160,0.10) 2px, transparent 2px),
-                radial-gradient(circle at 70% 60%, rgba(200,200,200,0.08) 2px, transparent 2px),
-                radial-gradient(circle at 40% 80%, rgba(120,200,160,0.06) 3px, transparent 3px);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* bring content above background */
-        .main {
-            position: relative;
-            z-index: 1;
-        }
         </style>
         """,
         unsafe_allow_html=True
     )
+
+# 👇 THEN CALL
+add_pollock_background()
+
+# 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
 # -------------------------
