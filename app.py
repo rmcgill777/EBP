@@ -53,7 +53,6 @@ This tool is provided for informational and educational purposes only. No warran
 <br>
 
 &copy; 2026 Ryan J. McGill, PhD. All rights reserved.
-""", unsafe_allow_html=True)
 
 # -------------------------
 # INPUTS
