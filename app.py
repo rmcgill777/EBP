@@ -3,44 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 
-st.markdown("""
-<style>
-
-/* MAIN content blocks */
-[data-testid="stVerticalBlock"] > div:has(.green-results) {
-    background: linear-gradient(135deg, #115740, #0C3B2E);
-    padding: 20px;
-    border-radius: 12px;
-    border-top: 4px solid #d4af37;
-}
-
-/* Make text readable inside */
-.green-results, 
-.green-results * {
-    color: #f4f4f4 !important;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown('<div class="green-results">', unsafe_allow_html=True)
-
-st.subheader("Diagnostic Efficiency")
-st.write(f"Sensitivity: {sensitivity:.3f}")
-st.write(f"Specificity: {specificity:.3f}")
-st.write(f"PPV: {ppv:.3f}")
-st.write(f"NPV: {npv:.3f}")
-
-st.subheader("Likelihood Ratios")
-st.write(f"LR+: {lr_pos:.3f}")
-st.write(f"LR-: {lr_neg:.3f}")
-
-st.subheader("Discrimination")
-st.write(f"AUC (derived): {auc:.3f}")
-
-st.markdown('</div>', unsafe_allow_html=True)
-
-
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
