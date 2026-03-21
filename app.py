@@ -50,7 +50,10 @@ with st.expander("View definitions and disclaimer"):
     st.markdown("""
 This tool is provided for informational and educational purposes only. No warranty is expressed or implied regarding its accuracy or fitness for a particular purpose. Results should be interpreted with professional judgment and in the context of additional clinical information. The user assumes full responsibility for any decisions or interpretations derived from this tool.
     """)
-© Ryan J. McGill, PhD (2026)
+<br>
+
+&copy; 2026 Ryan J. McGill, PhD. All rights reserved.
+""", unsafe_allow_html=True)
 
 # -------------------------
 # INPUTS
