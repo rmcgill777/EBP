@@ -5,11 +5,34 @@ import io
 
 # 👇 DEFINE FIRST
 def add_pollock_background():
+ def add_pollock_background():
     st.markdown(
         """
         <style>
+        /* Main background */
         .stApp {
             background: linear-gradient(135deg, #0f1a17, #1f3d36) !important;
+        }
+
+        /* Subtle overlay (behind content) */
+        .stApp::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(120,200,160,0.08) 2px, transparent 2px),
+                radial-gradient(circle at 70% 60%, rgba(200,200,200,0.06) 2px, transparent 2px),
+                radial-gradient(circle at 40% 80%, rgba(120,200,160,0.05) 3px, transparent 3px);
+            pointer-events: none;
+            z-index: -1;   /* 👈 THIS IS THE KEY FIX */
+        }
+
+        /* Ensure text is readable */
+        .stApp, .stApp p, .stApp div, .stApp span, .stApp label {
+            color: #e8f5f0 !important;
         }
         </style>
         """,
