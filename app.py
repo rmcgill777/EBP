@@ -27,7 +27,7 @@ npv = tn/(tn+fn+eps)
 
 lrp = sens/(1-spec+eps)
 lrn = (1-sens+eps)/spec
-dor = lr_pos / lr_neg
+dor = lrp / lrn
 
 lorp = np.log(lrp+eps)
 lorn = np.log(lrn+eps)
