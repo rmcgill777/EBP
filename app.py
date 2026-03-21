@@ -2,6 +2,33 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import io
+
+st.markdown("""
+<style>
+
+/* Target download button specifically */
+.stDownloadButton button {
+    background-color: #d4af37 !important;  /* W&M gold */
+    color: black !important;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+/* Hover effect */
+.stDownloadButton button:hover {
+    background-color: #b8962e !important;
+    color: black !important;
+}
+
+/* Make it pop slightly */
+.stDownloadButton {
+    margin-top: 10px;
+}
+
+</style>
+""", unsafe_allow_html=True)
 st.markdown("""
 <style>
 /* Main app background */
