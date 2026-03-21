@@ -6,6 +6,51 @@ import io
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
+st.markdown("### ℹ️ Information")
+
+with st.expander("View definitions and disclaimer"):
+
+    st.markdown("#### Diagnostic Statistics")
+
+    st.markdown("""
+- **Sensitivity**: Proportion of true positives correctly identified.
+- **Specificity**: Proportion of true negatives correctly identified.
+- **PPV (Positive Predictive Value)**: Probability that a positive test reflects the condition.
+- **NPV (Negative Predictive Value)**: Probability that a negative test reflects absence of the condition.
+    """)
+
+    st.markdown("#### Likelihood Ratios")
+
+    st.markdown("""
+- **LR+**: Increase in odds of the condition given a positive test.
+- **LR−**: Decrease in odds of the condition given a negative test.
+- **log(LR)**: Log-transformed likelihood ratios for interpretive scaling.
+- **DOR (Diagnostic Odds Ratio)**: Overall measure of test effectiveness (LR+ / LR−).
+    """)
+
+    st.markdown("#### Discrimination")
+
+    st.markdown("""
+- **AUC (Single Threshold Estimate)**: Approximation based on sensitivity and specificity.
+- **AUC (ROC)**: Area under the empirical ROC curve when multiple thresholds are provided.
+    """)
+
+    st.markdown("#### Bayesian Updating")
+
+    st.markdown("""
+- **Pre-test Probability**: Estimated likelihood of the condition before testing.
+- **Post-test Probability**: Updated probability after applying likelihood ratios.
+- **Fagan Nomogram**: Visual representation of Bayesian updating using likelihood ratios.
+    """)
+
+    st.markdown("---")
+
+    st.markdown("#### Disclaimer")
+
+    st.markdown("""
+This tool is provided for informational and educational purposes only. No warranty is expressed or implied regarding its accuracy or fitness for a particular purpose. Results should be interpreted with professional judgment and in the context of additional clinical information. The user assumes full responsibility for any decisions or interpretations derived from this tool.
+    """)
+
 # -------------------------
 # INPUTS
 # -------------------------
