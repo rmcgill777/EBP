@@ -10,10 +10,10 @@ st.title("EBA Essentials")
 # INPUTS
 # -------------------------
 st.sidebar.header("2×2 Contingency Table")
-tp = st.sidebar.number_input("TP", 0, 1000, 50)
-fp = st.sidebar.number_input("FP", 0, 1000, 10)
-fn = st.sidebar.number_input("FN", 0, 1000, 5)
-tn = st.sidebar.number_input("TN", 0, 1000, 100)
+tp = st.sidebar.number_input("TP", 0, 5000, 50)
+fp = st.sidebar.number_input("FP", 0, 5000, 10)
+fn = st.sidebar.number_input("FN", 0, 5000, 5)
+tn = st.sidebar.number_input("TN", 0, 5000, 100)
 
 # -------------------------
 # COMPUTE
