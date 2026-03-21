@@ -54,6 +54,56 @@ st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
 
+st.subheader("Interpretation")
+
+# -------------------------
+# LR+ (Rule-in)
+# -------------------------
+if lr_pos > 10:
+    st.success("LR+: Strong evidence to rule IN the condition.")
+elif lr_pos > 5:
+    st.info("LR+: Moderate evidence to rule IN the condition.")
+elif lr_pos > 2:
+    st.warning("LR+: Weak evidence to rule IN the condition.")
+else:
+    st.error("LR+: Minimal evidence to rule IN the condition.")
+
+# -------------------------
+# LR- (Rule-out)
+# -------------------------
+if lr_neg < 0.1:
+    st.success("LR-: Strong evidence to rule OUT the condition.")
+elif lr_neg < 0.2:
+    st.info("LR-: Moderate evidence to rule OUT the condition.")
+elif lr_neg < 0.5:
+    st.warning("LR-: Weak evidence to rule OUT the condition.")
+else:
+    st.error("LR-: Minimal evidence to rule OUT the condition.")
+
+# -------------------------
+# DOR (Overall test performance)
+# -------------------------
+if dor > 100:
+    st.success("DOR: Very strong overall test performance.")
+elif dor > 20:
+    st.info("DOR: Good overall test performance.")
+elif dor > 5:
+    st.warning("DOR: Moderate test performance.")
+else:
+    st.error("DOR: Limited discriminative value.")
+
+# -------------------------
+# AUC (Discrimination)
+# -------------------------
+if auc > 0.9:
+    st.success("AUC: Excellent discrimination.")
+elif auc > 0.8:
+    st.info("AUC: Good discrimination.")
+elif auc > 0.7:
+    st.warning("AUC: Acceptable discrimination.")
+else:
+    st.error("AUC: Poor discrimination.")
+
 # -------------------------
 # FAGAN NOMOGRAM
 # -------------------------
