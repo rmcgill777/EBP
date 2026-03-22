@@ -293,45 +293,9 @@ st.pyplot(fig)
 st.write(f"Post+ : {post_pos:.3f}")
 st.write(f"Post- : {post_neg:.3f}")
 
-# -------------------------
-# EBA INTERPRETATION (POSTERIOR PROBABILITY)
-# -------------------------
-st.write("### EBA Interpretation (Posterior Probability)")
-
-# Thresholds (can later make these user-adjustable)
-wait_threshold = 0.10
-treat_threshold = 0.70
-
-# Display zones clearly
-st.markdown(f"""
-- **Wait Zone (Rule Out)**: < {wait_threshold:.2f}  
-- **Assessment Zone**: {wait_threshold:.2f} – {treat_threshold:.2f}  
-- **Treatment Zone (Rule In)**: > {treat_threshold:.2f}  
-""")
-
-# Interpretation logic
-if post_pos < wait_threshold:
-    st.success(
-        "Wait Zone: Probability is low. Condition is likely ruled out. "
-        "Further assessment is typically unnecessary unless new information emerges."
-    )
-
-elif wait_threshold <= post_pos <= treat_threshold:
-    st.warning(
-        "Assessment Zone: Probability is intermediate. Additional assessment is recommended "
-        "to refine diagnostic confidence before making treatment decisions."
-    )
-
-else:
-    st.error(
-        "Treatment Zone: Probability is high. Condition is likely present. "
-        "Consider initiating treatment or intervention."
-    )
-
-# Optional transparency
-with st.expander("View decision thresholds"):
-    st.write(f"Wait-Test Threshold: {wait_threshold:.2f}")
-    st.write(f"Test-Treat Threshold: {treat_threshold:.2f}")
+Wait Zone (Rule Out): < 0.10
+Assessment Zone: 0.10 – 0.70
+Treatment Zone (Rule In): > 0.7
 
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
