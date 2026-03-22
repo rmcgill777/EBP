@@ -294,7 +294,7 @@ st.write(f"Post+ : {post_pos:.3f}")
 st.write(f"Post- : {post_neg:.3f}")
 
 # -------------------------
-# EBA INTERPRETATION (SIMPLE)
+# EBA INTERPRETATION (SIMPLE + STYLED)
 # -------------------------
 st.write("### EBA Interpretation")
 
@@ -302,22 +302,28 @@ wait_threshold = 0.10
 treat_threshold = 0.70
 
 if post_pos < wait_threshold:
-    st.write(
-        "Low probability: The condition is unlikely and can typically be ruled out "
-        "unless new information emerges."
-    )
+    interpretation = "Low probability: The condition is unlikely and can typically be ruled out unless new information emerges."
 
 elif post_pos < treat_threshold:
-    st.write(
-        "Intermediate probability: Additional assessment is recommended to clarify "
-        "diagnostic confidence before making treatment decisions."
-    )
+    interpretation = "Intermediate probability: Additional assessment is recommended to clarify diagnostic confidence before making treatment decisions."
 
 else:
-    st.write(
-        "High probability: The condition is likely present and should be considered "
-        "in treatment planning."
-    )
+    interpretation = "High probability: The condition is likely present and should be considered in treatment planning."
+
+# --- GOLD BUTTON STYLE OUTPUT ---
+st.markdown(f"""
+<div style="
+    background-color:#d4af37;
+    color:black;
+    font-weight:bold;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+">
+{interpretation}
+</div>
+""", unsafe_allow_html=True)
+
 
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
