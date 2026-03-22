@@ -299,8 +299,8 @@ st.write(f"Post- : {post_neg:.3f}")
 st.write("### EBA Interpretation (Posterior Probability)")
 
 # Thresholds (can later make these user-adjustable)
-wait_threshold = 0.10
-treat_threshold = 0.70
+wait_threshold (rule-out) = 0.10
+treat_threshold (rule-in) = 0.70
 
 # Interpretation logic
 if post_pos < wait_threshold:
