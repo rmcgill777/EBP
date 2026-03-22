@@ -63,7 +63,7 @@ section[data-testid="stSidebar"] label {
     font-weight: 600;
 }
 
-/* Sidebar header ("2×2 Diagnostic Contingency Table") */
+st.sidebar.header("2×2 Diagnostic Contingency Table")
 section[data-testid="stSidebar"] h1,
 section[data-testid="stSidebar"] h2,
 section[data-testid="stSidebar"] h3 {
