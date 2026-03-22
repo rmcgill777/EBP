@@ -52,6 +52,19 @@ st.markdown("""
 
 /* --- SIDEBAR TEXT FIX --- */
 
+st.sidebar.markdown("""
+**Instructions**
+
+Enter values from a 2×2 contingency table:
+
+- **TP (True Positives):** Test positive & condition present  
+- **FP (False Positives):** Test positive & condition absent  
+- **FN (False Negatives):** Test negative & condition present  
+- **TN (True Negatives):** Test negative & condition absent  
+
+Values should be raw counts (not percentages).
+""")
+
 /* Sidebar background (force contrast) */
 section[data-testid="stSidebar"] {
     background-color: #f0f2f6 !important;
