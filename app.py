@@ -152,7 +152,6 @@ with st.expander("View definitions and disclaimer"):
     st.markdown("""
 - **AUC (ROC)**: Area under the empirical ROC curve based on sensitivity and specificity as an approximate model estimate.
     """)
-
     st.markdown("#### Bayesian Updating")
 
     st.markdown("""
