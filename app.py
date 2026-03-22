@@ -174,9 +174,7 @@ This tool is provided for informational and educational purposes only. No warran
 
 &copy; 2026 Ryan J. McGill, PhD. All rights reserved.
 """, unsafe_allow_html=True)
-
 st.markdown("---")
-
 with st.expander("📚 Selected EBA References"):
     st.markdown("""
 - Hunsley, J., & Mash, E. J. (2007).  
