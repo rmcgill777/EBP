@@ -239,7 +239,7 @@ st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 
 # --- INTERPRETATIONS (SIMPLE & STABLE) ---
 
-st.write("### Interpretation")
+st.write("### Provisional Odds Interpretations")
 
 # LR+ interpretation
 if lrp >= 10:
