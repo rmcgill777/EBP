@@ -63,7 +63,7 @@ section[data-testid="stSidebar"] label {
     font-weight: 600;
 }
 
-/* Sidebar header ("2×2 Contingency Table") */
+/* Sidebar header ("2×2 Diagnostic Contingency Table") */
 section[data-testid="stSidebar"] h1,
 section[data-testid="stSidebar"] h2,
 section[data-testid="stSidebar"] h3 {
@@ -204,8 +204,8 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.sidebar.caption(
-    "Enter counts from a 2x2 table: TP = true positives, FP = false positives, "
-    "FN = false negatives, TN = true negatives."
+    "Instructions: Please enter counts from a classic confusion table: TP = true positives, FP = false positives, "
+    "FN = false negatives, TN = true negatives. Must be actual counts and not percentages."
 )
 # -------------------------
 # COMPUTE
