@@ -239,13 +239,37 @@ st.write(f"log(LR+): {lorp:.3f}")
 st.write(f"log(LR-): {lorn:.3f}")
 st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 
-# --- DOR INTERPRETATION (COLOR MATCHED TO NOMOGRAM) ---
-if dor >= 10:
-    st.success("Strong diagnostic evidence")
-elif dor >= 3:
-    st.info("Moderate diagnostic evidence")
+# --- INTERPRETATIONS (SIMPLE & STABLE) ---
+
+st.write("### Interpretation")
+
+# LR+ interpretation
+if lrp >= 10:
+    st.write("LR+: Large increase in likelihood")
+elif lrp >= 5:
+    st.write("LR+: Moderate increase in likelihood")
+elif lrp >= 2:
+    st.write("LR+: Small increase in likelihood")
 else:
-    st.warning("Weak diagnostic evidence")
+    st.write("LR+: Minimal change in likelihood")
+
+# LR- interpretation
+if lrn <= 0.1:
+    st.write("LR-: Large decrease in likelihood")
+elif lrn <= 0.2:
+    st.write("LR-: Moderate decrease in likelihood")
+elif lrn <= 0.5:
+    st.write("LR-: Small decrease in likelihood")
+else:
+    st.write("LR-: Minimal change in likelihood")
+
+# DOR interpretation
+if dor >= 10:
+    st.write("DOR: Strong diagnostic evidence")
+elif dor >= 3:
+    st.write("DOR: Moderate diagnostic evidence")
+else:
+    st.write("DOR: Weak diagnostic evidence")
 
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
