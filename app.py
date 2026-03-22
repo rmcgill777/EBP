@@ -294,7 +294,7 @@ st.write(f"Post+ : {post_pos:.3f}")
 st.write(f"Post- : {post_neg:.3f}")
 
 Wait Zone (Rule Out): < 0.10
-Assessment Zone: 0.10 – 0.70
+Assessment Zone: 0.10 - 0.70
 Treatment Zone (Rule In): > 0.7
 
 buf = io.BytesIO()
