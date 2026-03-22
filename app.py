@@ -47,6 +47,36 @@ h1, h2, h3, h4, h5, h6, p, div, span, label {
 
 </style>
 """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+/* --- SIDEBAR TEXT FIX --- */
+
+/* Sidebar background (force contrast) */
+section[data-testid="stSidebar"] {
+    background-color: #f0f2f6 !important;
+}
+
+/* Sidebar labels (TP, FP, FN, TN) */
+section[data-testid="stSidebar"] label {
+    color: black !important;
+    font-weight: 600;
+}
+
+/* Sidebar header ("2×2 Contingency Table") */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: black !important;
+}
+
+/* Sidebar numbers inside inputs */
+section[data-testid="stSidebar"] input {
+    color: black !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # -------------------------
 # SAFE EXPANDER STYLING (WORKING)
