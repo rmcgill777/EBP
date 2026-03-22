@@ -7,6 +7,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import io
+import pandas as pd
 
 # -------------------------
 # STYLING (SAFE & CLEAN)
@@ -130,8 +131,6 @@ fp = st.sidebar.number_input("FP", 0, 5000, 10)
 fn = st.sidebar.number_input("FN", 0, 5000, 5)
 tn = st.sidebar.number_input("TN", 0, 5000, 100)
 
-import pandas as pd
-
 st.markdown("<h4 style='color:black;'>Contingency Table</h4>", unsafe_allow_html=True)
 
 table = pd.DataFrame(
@@ -140,14 +139,6 @@ table = pd.DataFrame(
     columns=["Condition Positive", "Condition Negative"],
     index=["Test Positive", "Test Negative"]
 )
-
-st.markdown("""
-<style>
-[data-testid="stDataFrame"] * {
-    color: black !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
 st.dataframe(table, use_container_width=True)
 # -------------------------
