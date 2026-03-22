@@ -314,8 +314,8 @@ else:
 
 # Optional: show thresholds for transparency
 with st.expander("View decision thresholds"):
-    st.write(f"Wait-Test Threshold: {wait_threshold:.2f}")
-    st.write(f"Test-Treat Threshold: {treat_threshold:.2f}")
+    st.write(f"Wait-Rule Out Threshold: {wait_threshold:.2f}")
+    st.write(f"Treat-Rule In Threshold: {treat_threshold:.2f}")
 
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
