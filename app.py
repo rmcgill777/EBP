@@ -130,17 +130,28 @@ tp = st.sidebar.number_input("TP", 0, 5000, 50)
 fp = st.sidebar.number_input("FP", 0, 5000, 10)
 fn = st.sidebar.number_input("FN", 0, 5000, 5)
 tn = st.sidebar.number_input("TN", 0, 5000, 100)
+# --- CONTINGENCY TABLE (HTML - ALWAYS WORKS) ---
+st.markdown("<h4 style='color:white;'>Contingency Table</h4>", unsafe_allow_html=True)
 
-st.markdown("<h4 style='color:black;'>Contingency Table</h4>", unsafe_allow_html=True)
-
-table = pd.DataFrame(
-    [[tp, fp],
-     [fn, tn]],
-    columns=["Condition Positive", "Condition Negative"],
-    index=["Test Positive", "Test Negative"]
-)
-
-st.dataframe(table, use_container_width=True)
+st.markdown(f"""
+<table style="border-collapse: collapse; width: 100%; background-color: white; color: black;">
+    <tr>
+        <th style="border:1px solid black; padding:8px;"></th>
+        <th style="border:1px solid black; padding:8px;">Condition Positive</th>
+        <th style="border:1px solid black; padding:8px;">Condition Negative</th>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">Test Positive</th>
+        <td style="border:1px solid black; padding:8px;">{tp}</td>
+        <td style="border:1px solid black; padding:8px;">{fp}</td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">Test Negative</th>
+        <td style="border:1px solid black; padding:8px;">{fn}</td>
+        <td style="border:1px solid black; padding:8px;">{tn}</td>
+    </tr>
+</table>
+""", unsafe_allow_html=True)
 # -------------------------
 # COMPUTE
 # -------------------------
