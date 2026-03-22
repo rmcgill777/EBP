@@ -302,17 +302,33 @@ st.write("### EBA Interpretation (Posterior Probability)")
 wait_threshold = 0.10
 treat_threshold = 0.70
 
+# Display zones clearly
+st.markdown(f"""
+- **Wait Zone (Rule Out)**: < {wait_threshold:.2f}  
+- **Assessment Zone**: {wait_threshold:.2f} – {treat_threshold:.2f}  
+- **Treatment Zone (Rule In)**: > {treat_threshold:.2f}  
+""")
+
 # Interpretation logic
 if post_pos < wait_threshold:
-    st.success("Low probability (Wait-Test Threshold): Condition likely ruled out. No further assessment needed unless new information emerges.")
-    
-elif post_pos < treat_threshold:
-    st.warning("Intermediate probability (Assessment Zone): Additional assessment is recommended before making a treatment decision.")
-    
-else:
-    st.error("High probability (Test-Treat Threshold): Condition likely present. Consider initiating treatment.")
+    st.success(
+        "Wait Zone: Probability is low. Condition is likely ruled out. "
+        "Further assessment is typically unnecessary unless new information emerges."
+    )
 
-# Optional: show thresholds for transparency
+elif wait_threshold <= post_pos <= treat_threshold:
+    st.warning(
+        "Assessment Zone: Probability is intermediate. Additional assessment is recommended "
+        "to refine diagnostic confidence before making treatment decisions."
+    )
+
+else:
+    st.error(
+        "Treatment Zone: Probability is high. Condition is likely present. "
+        "Consider initiating treatment or intervention."
+    )
+
+# Optional transparency
 with st.expander("View decision thresholds"):
     st.write(f"Wait-Test Threshold: {wait_threshold:.2f}")
     st.write(f"Test-Treat Threshold: {treat_threshold:.2f}")
