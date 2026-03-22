@@ -317,6 +317,13 @@ with st.expander("View decision thresholds"):
     st.write(f"Wait-Rule Out Threshold: {wait_threshold:.2f}")
     st.write(f"Treat-Rule In Threshold: {treat_threshold:.2f}")
 
+    st.markdown("---")
+    st.caption(
+        "Source: Youngstrom, E. A., Choukas-Bradley, S., Calhoun, C. D., & Jensen-Doss, A. (2015). "
+        "Clinical guide to the evidence-based assessment approach to diagnosis and treatment. "
+        "Cognitive and Behavioral Practice, 22(1), 20–35. https://doi.org/10.1016/j.cbpra.2013.12.005"
+    )
+
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
 st.download_button(
