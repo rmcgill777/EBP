@@ -166,6 +166,14 @@ st.write(f"log(LR+): {lorp:.3f}")
 st.write(f"log(LR-): {lorn:.3f}")
 st.write(f"Diagnostic Odds Ratio (DOR): {dor:.3f}")
 
+# --- DOR INTERPRETATION (COLOR MATCHED TO NOMOGRAM) ---
+if dor >= 10:
+    st.success("Strong diagnostic evidence")
+elif dor >= 3:
+    st.info("Moderate diagnostic evidence")
+else:
+    st.warning("Weak diagnostic evidence")
+
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
 
