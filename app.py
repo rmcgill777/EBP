@@ -202,6 +202,11 @@ st.markdown(f"""
     </tr>
 </table>
 """, unsafe_allow_html=True)
+
+st.sidebar.caption(
+    "Enter counts from a 2x2 table: TP = true positives, FP = false positives, "
+    "FN = false negatives, TN = true negatives."
+)
 # -------------------------
 # COMPUTE
 # -------------------------
