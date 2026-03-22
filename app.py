@@ -63,7 +63,10 @@ section[data-testid="stSidebar"] label {
     font-weight: 600;
 }
 
-st.sidebar.header("2×2 Diagnostic Contingency Table")
+st.sidebar.markdown(
+    "<h3 style='color:#115740; font-weight:bold;'>2×2 Diagnostic Contingency Table</h3>",
+    unsafe_allow_html=True
+)
 section[data-testid="stSidebar"] h1,
 section[data-testid="stSidebar"] h2,
 section[data-testid="stSidebar"] h3 {
