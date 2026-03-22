@@ -299,18 +299,18 @@ st.write(f"Post- : {post_neg:.3f}")
 st.write("### EBA Interpretation (Posterior Probability)")
 
 # Thresholds (can later make these user-adjustable)
-wait_threshold (rule-out) = 0.10
-treat_threshold (rule-in) = 0.70
+wait_threshold = 0.10
+treat_threshold = 0.70
 
 # Interpretation logic
 if post_pos < wait_threshold:
-    st.success("Low probability (Wait-Test Threshold): Condition likely ruled out. No further assessment needed unless new information emerges.")
+    st.success("Low probability (Wait-Rule Out Threshold): Condition likely ruled out. No further assessment needed unless new information emerges.")
     
 elif post_pos < treat_threshold:
     st.warning("Intermediate probability (Assessment Zone): Additional assessment is recommended before making a treatment decision.")
     
 else:
-    st.error("High probability (Test-Treat Threshold): Condition likely present. Consider initiating treatment.")
+    st.error("High probability (Treat-Rule In Threshold): Condition likely present. Consider initiating treatment.")
 
 # Optional: show thresholds for transparency
 with st.expander("View decision thresholds"):
