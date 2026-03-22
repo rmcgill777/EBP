@@ -150,7 +150,7 @@ with st.expander("View definitions and disclaimer"):
     st.markdown("#### Discrimination")
 
     st.markdown("""
-- **AUC (ROC)**: Area under the empirical ROC curve based on sensitivity and specificity as an approximate model estimate.
+- **AUC (ROC)**: Area under the empirical ROC curve based on sensitivity and specificity as an approximate model estimate absent a specific threshold.
     """)   
     st.markdown("#### Bayesian Updating")
 
