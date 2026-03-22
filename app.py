@@ -70,6 +70,18 @@ section[data-testid="stSidebar"] h3 {
     color: black !important;
 }
 
+with st.sidebar.expander("Instructions"):
+    st.markdown("""
+Enter values from a 2×2 contingency table:
+
+- **TP (True Positives):** Test positive & condition present  
+- **FP (False Positives):** Test positive & condition absent  
+- **FN (False Negatives):** Test negative & condition present  
+- **TN (True Negatives):** Test negative & condition absent  
+
+Values should be raw counts (not percentages).
+""")
+
 /* Sidebar numbers inside inputs */
 section[data-testid="stSidebar"] input {
     color: black !important;
