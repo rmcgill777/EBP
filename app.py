@@ -293,9 +293,31 @@ st.pyplot(fig)
 st.write(f"Post+ : {post_pos:.3f}")
 st.write(f"Post- : {post_neg:.3f}")
 
-Wait Zone (Rule Out): < 0.10
-Assessment Zone: 0.10 - 0.70
-Treatment Zone (Rule In): > 0.7
+# -------------------------
+# EBA INTERPRETATION (SIMPLE)
+# -------------------------
+st.write("### EBA Interpretation")
+
+wait_threshold = 0.10
+treat_threshold = 0.70
+
+if post_pos < wait_threshold:
+    st.write(
+        "Low probability: The condition is unlikely and can typically be ruled out "
+        "unless new information emerges."
+    )
+
+elif post_pos < treat_threshold:
+    st.write(
+        "Intermediate probability: Additional assessment is recommended to clarify "
+        "diagnostic confidence before making treatment decisions."
+    )
+
+else:
+    st.write(
+        "High probability: The condition is likely present and should be considered "
+        "in treatment planning."
+    )
 
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
