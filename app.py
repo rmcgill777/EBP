@@ -175,6 +175,37 @@ This tool is provided for informational and educational purposes only. No warran
 &copy; 2026 Ryan J. McGill, PhD. All rights reserved.
 """, unsafe_allow_html=True)
 
+st.markdown("---")
+
+with st.expander("📚 Selected EBA References"):
+    st.markdown("""
+- Hunsley, J., & Mash, E. J. (2007).  
+  *Evidence-based assessment.*  
+  Annual Review of Clinical Psychology, 3, 29–51.  
+
+- Sackett, D. L., Rosenberg, W. M. C., Gray, J. A. M., Haynes, R. B., & Richardson, W. S. (1996).  
+  *Evidence based medicine: What it is and what it isn't.*  
+  British Medical Journal, 312(7023), 71-72.  
+
+- Straus, S. E., Glasziou, P., Richardson, W. S., & Haynes, R. B. (2018).  
+  *Evidence-based medicine: How to practice and teach EBM* (5th ed.).  
+  Elsevier Health Sciences.  
+
+- Youngstrom, E. A., Choukas-Bradley, S., Calhoun, C. D., & Jensen-Doss, A. (2015).  
+  *Clinical guide to the evidence-based assessment approach to diagnosis and treatment.*  
+  Cognitive and Behavioral Practice, 22(1), 20-35.   
+
+- Youngstrom, E. A., & Van Meter, A. (2016).  
+  *Empirically supported assessment of children and adolescents.*  
+  Clinical Psychology: Science and Practice, 23(4), 327-347.
+
+- Youngstrom, E. A., & Prinstein, M. J. (2020).  
+  *Introduction to evidence based assessment: A recipe for success.*  
+  In E. A. Youngstrom, M. J. Prinstein, E. J. Mash, & R. A. Barkley (Eds.),  
+  *Assessment of disorders in childhood and adolescence* (5th ed., pp. 3-29).  
+  Guilford Press.  
+    """)
+
 # -------------------------
 # INPUTS
 # -------------------------
