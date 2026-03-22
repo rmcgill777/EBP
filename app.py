@@ -333,4 +333,7 @@ st.download_button(
     mime="image/png"
 )
 
-
+st.link_button(
+    "EBA Care Package",
+    "https://ericyoungstrom.web.unc.edu/evidence-based-assessment/"
+)
