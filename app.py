@@ -300,7 +300,6 @@ st.write("### EBA Interpretation (Posterior Probability)")
 
 # Thresholds (can later make these user-adjustable)
 wait_threshold = 0.10
-assessment_threshold = 0.50
 treat_threshold = 0.70
 
 # Interpretation logic
