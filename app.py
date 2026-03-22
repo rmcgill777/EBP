@@ -126,6 +126,29 @@ section[data-testid="stSidebar"] label {
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+
+/* Reduce vertical spacing between elements */
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Tighten spacing between buttons specifically */
+.stDownloadButton, .stButton {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+/* Reduce spacing between elements globally */
+div[data-testid="stVerticalBlock"] > div {
+    margin-bottom: 0.5rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
