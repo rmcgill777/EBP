@@ -199,34 +199,6 @@ else:
 st.write("### AUC (derived)")
 st.write(f"{auc:.3f}")
 
-/* -------------------------
-   INTERPRETATION COLORS (POP)
-------------------------- */
-
-/* SUCCESS (strong positive) */
-[data-testid="stAlert"][data-baseweb="notification"][kind="success"] {
-    background-color: #1f4e79 !important;  /* deep blue */
-    color: white !important;
-}
-
-/* INFO (moderate positive) */
-[data-testid="stAlert"][data-baseweb="notification"][kind="info"] {
-    background-color: #2e75b6 !important;  /* brighter blue */
-    color: white !important;
-}
-
-/* WARNING (moderate concern) */
-[data-testid="stAlert"][data-baseweb="notification"][kind="warning"] {
-    background-color: #e69138 !important;  /* orange */
-    color: black !important;
-}
-
-/* ERROR (poor / minimal evidence) */
-[data-testid="stAlert"][data-baseweb="notification"][kind="error"] {
-    background-color: #cc4125 !important;  /* warm red */
-    color: white !important;
-}
-
 # -------------------------
 # FAGAN NOMOGRAM
 # -------------------------
