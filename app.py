@@ -321,7 +321,7 @@ with st.expander("View decision thresholds"):
     st.caption(
         "Source: Youngstrom, E. A., Choukas-Bradley, S., Calhoun, C. D., & Jensen-Doss, A. (2015). "
         "Clinical guide to the evidence-based assessment approach to diagnosis and treatment. "
-        "Cognitive and Behavioral Practice, 22(1), 20–35. https://doi.org/10.1016/j.cbpra.2013.12.005"
+        "Cognitive and Behavioral Practice, 22(1), 20–35."
     )
 
 buf = io.BytesIO()
