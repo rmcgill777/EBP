@@ -101,6 +101,27 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+
+/* Sidebar background */
+section[data-testid="stSidebar"] {
+    background-color: #f0f2f6 !important;
+}
+
+/* Force ALL sidebar text visible */
+section[data-testid="stSidebar"] * {
+    color: black !important;
+}
+
+/* Make labels bold */
+section[data-testid="stSidebar"] label {
+    font-weight: 600 !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # 👇 THEN YOUR APP
 st.title("EBA Essentials")
 
