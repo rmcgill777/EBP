@@ -217,6 +217,7 @@ This tool is provided for informational and educational purposes only. No warran
 # -------------------------
 # INPUTS
 # -------------------------
+st.sidebar.image("EBA.png", use_container_width=True)
 st.sidebar.header("Diagnostic Contingency Table")
 tp = st.sidebar.number_input("TP", 0, 5000, 50)
 fp = st.sidebar.number_input("FP", 0, 5000, 10)
